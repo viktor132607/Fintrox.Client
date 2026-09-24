@@ -1,5 +1,0 @@
-C:\Users\vikto\source\repos\Fintrox\Fintrox\Fintrox.Client\obj\Debug\net9.0\staticwebassets.build.json
-C:\Users\vikto\source\repos\Fintrox\Fintrox\Fintrox.Client\obj\Debug\net9.0\staticwebassets.build.json
-C:\Users\vikto\source\repos\Fintrox\Fintrox\Fintrox.Client\obj\Debug\net9.0\staticwebassets.build.json
-C:\Users\vikto\source\repos\Fintrox\Fintrox\Fintrox.Client\obj\Debug\net9.0\staticwebassets.build.json
-C:\Users\vikto\source\repos\Fintrox\Fintrox\Fintrox.Client\obj\Debug\net9.0\staticwebassets.build.json
