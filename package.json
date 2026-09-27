@@ -1,0 +1,18 @@
+{
+  "name": "fintrox-client",
+  "private": true,
+  "workspaces": [
+    "apps/web"
+  ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "npm run dev --workspace @fintrox/web",
+    "build": "npm run build --workspace @fintrox/web",
+    "start": "npm run start --workspace @fintrox/web",
+    "typecheck": "npm run typecheck --workspace @fintrox/web",
+    "check:architecture": "node scripts/check-architecture.mjs",
+    "check": "npm run check:architecture && npm run typecheck"
+  }
+}
