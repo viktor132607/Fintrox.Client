@@ -2,6 +2,18 @@
 
 Next.js App Router + TypeScript frontend for Fintrox.Server (ASP.NET Core Web API / PostgreSQL).
 
+## Frontend standard
+
+The active frontend is TypeScript-only:
+
+- application source uses `.ts` and `.tsx`;
+- `allowJs` is disabled;
+- TypeScript strict mode is enabled;
+- architecture checks reject JavaScript/JSX source inside `apps/web/src`;
+- frontend tooling in `scripts/` is TypeScript as well.
+
+The previous Blazor client has been removed from the active tree. It remains available in Git history if a later migration needs to reference an old screen or behavior.
+
 ## Local commands
 
 ```bash
@@ -11,9 +23,9 @@ npm run check
 npm run build
 ```
 
-Use Node 22+; dev runs at http://localhost:3000. Run commands from the repository root.
+Use Node 22.6+; dev runs at http://localhost:3000. Run commands from the repository root.
 `apps/web/.env.example` reserves the API base URL. No API calls or credentials are needed
-for the skeleton. Production: `npm run build` then `npm start` (supports PORT).
+for the skeleton. Production: `npm run build` then `npm start` (supports `PORT`).
 
 ## Structure
 
@@ -23,11 +35,8 @@ for the skeleton. Production: `npm run build` then `npm start` (supports PORT).
 - `apps/web/src/composition`: future cross-module UI composition.
 - `architecture/modules.json`: ownership inventory matching the server.
 - `tests`: future contract and end-to-end tests.
+- `scripts`: TypeScript repository/architecture tooling.
 
 The current screen is only a neutral application shell. Business pages, API calls,
 authentication, design system and feature behavior are intentionally unimplemented.
-Tailwind/shadcn may be added when UI work is authorized; no UI migration is included.
-
-The original `Fintrox/` Blazor tree and `Fintrox.sln` are retained as legacy reference.
-They are not part of the npm workspace and were not deleted or rewritten.
-See [architecture](docs/architecture.md).
+Tailwind/shadcn may be added when UI work is authorized; no business implementation is included.

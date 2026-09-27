@@ -3,17 +3,6 @@
 .env.*
 !.env.example
 
-# .NET legacy / migration artifacts
-**/bin/
-**/obj/
-.vs/
-*.user
-*.suo
-TestResults/
-coverage/
-*.coverage
-*.coveragexml
-
 # Next.js / Node
 node_modules/
 .next/

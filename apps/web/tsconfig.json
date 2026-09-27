@@ -7,6 +7,7 @@
       "esnext"
     ],
     "allowJs": false,
+    "checkJs": false,
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
@@ -17,6 +18,9 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUncheckedIndexedAccess": true,
+    "useUnknownInCatchVariables": true,
     "plugins": [
       {
         "name": "next"

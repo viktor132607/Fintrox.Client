@@ -1,18 +1,20 @@
 {
   "name": "fintrox-client",
   "private": true,
+  "type": "module",
   "workspaces": [
     "apps/web"
   ],
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=22.6.0"
   },
   "scripts": {
     "dev": "npm run dev --workspace @fintrox/web",
     "build": "npm run build --workspace @fintrox/web",
     "start": "npm run start --workspace @fintrox/web",
     "typecheck": "npm run typecheck --workspace @fintrox/web",
-    "check:architecture": "node scripts/check-architecture.mjs",
-    "check": "npm run check:architecture && npm run typecheck"
+    "typecheck:tools": "tsc -p tsconfig.tools.json --noEmit",
+    "check:architecture": "node --experimental-strip-types scripts/check-architecture.ts",
+    "check": "npm run check:architecture && npm run typecheck:tools && npm run typecheck"
   }
 }
