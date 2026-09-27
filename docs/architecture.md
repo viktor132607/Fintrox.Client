@@ -30,3 +30,7 @@ browser-token storage or trust tenant selectors as authorization by default.
 `architecture/modules.json` matches the Server catalog. Changes to ownership require a
 coordinated update to both repositories. CI checks module coverage, import directions,
 TypeScript tooling and application type safety.
+
+## Platform extension
+
+The catalog now contains 23 modules: the original 21 plus Capabilities and Experience. See [activation and experience](activation-experience.md). The shared architecture/experience-integration.json manifest is design metadata only. Its reserved entries do not enable a feature, grant permission or represent a working widget.

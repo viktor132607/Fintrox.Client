@@ -7,6 +7,7 @@ type ModuleCatalogEntry = {
   name: string;
   slug: string;
   schema: string;
+  features: string[];
 };
 
 type ModuleCatalog = {
@@ -22,6 +23,23 @@ const catalogData = JSON.parse(
 const catalog = catalogData.modules;
 
 const errors: string[] = [];
+type ExperienceManifest = {
+  capabilities: { id: string; module: string; feature: string }[];
+  profiles: { id: string }[];
+  ownership: Record<string, string>;
+  requiredDirectories: { client: string[] };
+};
+const manifest = JSON.parse(readFileSync(resolve(root, "architecture/experience-integration.json"), "utf8")) as ExperienceManifest;
+const featureKeys = catalog.flatMap(m => m.features.map(f => `${m.name}/${f}`)).sort();
+const capabilityKeys = manifest.capabilities.map(c => `${c.module}/${c.feature}`).sort();
+if (JSON.stringify(featureKeys) !== JSON.stringify(capabilityKeys)) errors.push("Capability catalog must cover every feature exactly once");
+if (new Set(manifest.capabilities.map(c => c.id)).size !== manifest.capabilities.length) errors.push("Duplicate capability ID");
+if (JSON.stringify(manifest.profiles.map(p => p.id).sort()) !== JSON.stringify(["accountant", "expert", "simple"])) errors.push("Expected exactly three base profiles");
+const owners = { activation: "Capabilities", appInstallations: "Integrations", preferences: "Experience", authorization: "Identity" };
+if (Object.keys(manifest.ownership).length !== Object.keys(owners).length || Object.entries(owners).some(([key, value]) => manifest.ownership[key] !== value)) errors.push("Invalid platform ownership");
+for (const directory of manifest.requiredDirectories.client) {
+  if (!existsSync(resolve(root, directory))) errors.push(`Missing platform directory: ${directory}`);
+}
 const expected = catalog.map((module) => module.slug).sort();
 const actual = readdirSync(modulesRoot, { withFileTypes: true })
   .filter((entry) => entry.isDirectory())
@@ -102,6 +120,10 @@ function checkImport(file: string, specifier: string): void {
 
   if (source[0] === "shared" && destination[0] !== "shared") {
     errors.push(`${file}: shared imports ${specifier}`);
+  }
+
+  if (source[0] === "experience" && destination[0] !== "experience" && destination[0] !== "shared") {
+    errors.push(`${file}: experience imports forbidden layer ${specifier}`);
   }
 
   if (

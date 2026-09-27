@@ -30,7 +30,7 @@ for the skeleton. Production: `npm run build` then `npm start` (supports `PORT`)
 ## Structure
 
 - `apps/web/src/app`: thin Next.js routing/layout; reserved auth/workspace groups.
-- `apps/web/src/modules`: 21 business modules aligned with the backend catalog.
+- `apps/web/src/modules`: 23 business modules aligned with the backend catalog.
 - `apps/web/src/shared`: reusable presentation, config and generated API types; no financial rules.
 - `apps/web/src/composition`: future cross-module UI composition.
 - `architecture/modules.json`: ownership inventory matching the server.
@@ -40,3 +40,7 @@ for the skeleton. Production: `npm run build` then `npm start` (supports `PORT`)
 The current screen is only a neutral application shell. Business pages, API calls,
 authentication, design system and feature behavior are intentionally unimplemented.
 Tailwind/shadcn may be added when UI work is authorized; no business implementation is included.
+
+## Activatable integrations and experience structure
+
+See [ownership and lifecycle](docs/activation-experience.md). Capabilities and Experience are new structural boundaries; Integrations owns external app installations. Simple / Accountant / Expert are customizable UI presets, independent of permissions. No activation or layout behavior is implemented.
