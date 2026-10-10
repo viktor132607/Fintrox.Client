@@ -1,12 +1,13 @@
-# Frontend status — 2026-10-09
+# Frontend status — 2026-10-10
 
-Inspected main baseline: 6d68ba2946c7e07faa502acd8ebb8d14ac9875b2.
-Next.js 16.3.6, React 19.2, strict TypeScript; apps/web is the active app.
-23 existing feature module shells. Existing README describes a neutral shell; full business audit is pending.
-No frontend source changes or new screens in the architecture task.
-Backend expanded to 36 modules / 186 .NET projects at c3f0ebfb1f2f4dc547cbaa1286bee61ae21de395.
-The 13 new backend modules have no frontend shells yet.
-Client architecture manifests remain the existing 23-module snapshot; do not infer runtime activation.
-Server memory is authoritative: https://github.com/viktor132607/Fintrox.Server/tree/main/docs/ai
-Next frontend milestone: expand shells and align manifests after scope is authorized; validate with npm run check and npm run build.
-Frontend build/tests NOT RUN in this backend scaffold task.
+Client source baseline: 6d68ba2946c7e07faa502acd8ebb8d14ac9875b2; subsequent changes are project memory only.
+
+- Next.js/React application has 23 TypeScript module shells and placeholder UI; no operational business screens.
+- Read-only audit completed and documented in Fintrox.Server/docs/ai/AUDIT.md.
+- Client CI run 37859970261 passed install, check and build. No new frontend source changes in the backend security milestones.
+- Server architecture: 36 modules / 186 projects. The 13 additional backend modules still have no frontend shells.
+- Server AUTH-001 complete at 79ee090: current-state bearer validation, build and 46 tests passed.
+- Server AUTH-002 code at 422cc38: atomic refresh-token rotation with five PostgreSQL regression tests; consult Server memory for final validation status.
+- FE-001 remains queued: align frontend catalogs/shells to all 36 modules, then implement authorized operational screens incrementally.
+
+Authoritative queue and handoff: https://github.com/viktor132607/Fintrox.Server/tree/main/docs/ai

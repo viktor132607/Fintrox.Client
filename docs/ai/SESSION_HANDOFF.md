@@ -1,22 +1,11 @@
-# Fintrox Client handoff
+# Client session handoff — 2026-10-10
 
-## Last Verified Commit
-Client source baseline: 6d68ba2946c7e07faa502acd8ebb8d14ac9875b2.
-Backend architecture commit: c3f0ebfb1f2f4dc547cbaa1286bee61ae21de395.
+Client source remains at baseline 6d68ba2946c7e07faa502acd8ebb8d14ac9875b2; only memory files changed afterward.
 
-## Current Milestone
-Backend scaffold expansion completed: 13 modules / 65 new projects.
-This Client commit records continuity only; frontend remains 23 module shells.
+Backend scaffolding and full repository inventory/audit are complete. Server has 36 modules / 186 projects; Client has 23 module shells and no operational business screens. Do not recreate scaffolds or repeat the baseline audit.
 
-## Validation
-Client repository tree, README and package manifests inspected. Frontend build/tests NOT RUN.
-Backend static architecture and all 362 published file hashes verified; .NET SDK unavailable.
+Validation: Client CI run 37859970261 passed check/build. Server AUTH-001 at 79ee090 passed build, 46 tests and PostgreSQL migrations. Server AUTH-002 at 422cc38 implements atomic refresh rotation and adds five real PostgreSQL tests; follow Server docs/ai/SESSION_HANDOFF.md for current verification and next task.
 
-## Next Exact Action
-Read Server docs/ai/SESSION_HANDOFF.md, CURRENT_STATE.md and TASK_QUEUE.md.
-After the requested model switch, verify .NET build/tests then perform the scheduled full project audit.
-Do not recreate the 13 backend module scaffolds or implement frontend/business logic during this handoff.
+Frontend work remains FE-001 in the authoritative Server queue. No frontend business implementation or module expansion was done in these backend milestones.
 
-## Known Gaps
-13 new frontend module shells and manifest alignment are pending.
-See FRONTEND_STATUS.md.
+https://github.com/viktor132607/Fintrox.Server/tree/main/docs/ai
