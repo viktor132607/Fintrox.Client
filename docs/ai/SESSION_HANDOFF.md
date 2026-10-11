@@ -1,4 +1,4 @@
-# Client session handoff — 2026-10-10
+# Client session handoff — 2026-10-11
 
 Client source remains at baseline 6d68ba2946c7e07faa502acd8ebb8d14ac9875b2; only memory files changed afterward.
 
@@ -9,3 +9,5 @@ Validation: Client CI run 37859970261 passed check/build. Server AUTH-001 at 79e
 Frontend work remains FE-001 in the authoritative Server queue. No frontend business implementation or module expansion was done in these backend milestones.
 
 https://github.com/viktor132607/Fintrox.Server/tree/main/docs/ai
+
+Server ENTITIES-001 at 72bb3db adds 180 domain entity classes across all 36 modules. These are not yet EF-backed APIs; frontend source remains unchanged. Entity inventory and remaining work: Fintrox.Server/docs/ai/MODULE_STATUS.md. Follow Server SESSION_HANDOFF.md / VALIDATION.md for verified results.

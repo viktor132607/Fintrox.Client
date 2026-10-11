@@ -1,4 +1,4 @@
-# Frontend status — 2026-10-10
+# Frontend status — 2026-10-11
 
 Client source baseline: 6d68ba2946c7e07faa502acd8ebb8d14ac9875b2; subsequent changes are project memory only.
 
@@ -11,3 +11,5 @@ Client source baseline: 6d68ba2946c7e07faa502acd8ebb8d14ac9875b2; subsequent cha
 - FE-001 remains queued: align frontend catalogs/shells to all 36 modules, then implement authorized operational screens incrementally.
 
 Authoritative queue and handoff: https://github.com/viktor132607/Fintrox.Server/tree/main/docs/ai
+
+Server ENTITIES-001 at 72bb3db adds 180 domain entity classes across all 36 modules. These are not yet EF-backed APIs; frontend source remains unchanged. Entity inventory and remaining work: Fintrox.Server/docs/ai/MODULE_STATUS.md. Follow Server SESSION_HANDOFF.md / VALIDATION.md for verified results.
